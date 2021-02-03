@@ -1,16 +1,20 @@
 // complete the function
-function fibonacci(n) {
-  const arr = [];
-
-  for (let i = 0; i < n; i++) {
-    if (i === 0 || i === 1) {
-      arr[i] = i;
-    } else {
-      arr[i] = arr[i - 1] + arr[i - 2];
+function palindrom(str) {
+  // code goes here
+  var re = /[^A-Za-z0-9]/g;
+    str = str.toLowerCase().replace(re, '');
+    var len = str.length;
+    for (var i = 0; i< len/2; i++) {
+        if (str[i] !== str[len - 1 - i]) {
+         return false;
+        }
     }
+    return true;
   }
+  palindrome("Taco cat");
 
-  return arr;
+function solution(arg) {
+  return palindrom(arg);
 }
 
 if (typeof require !== "undefined" && require.main === module) {
@@ -18,8 +22,8 @@ if (typeof require !== "undefined" && require.main === module) {
     throw Error("Require argument");
   }
 
-  const n = process.argv[2];
-  console.log(fibonacci(n));
+  const arg = process.argv[2];
+  console.log(solution(arg));
 }
 
-module.exports = { fibonacci };
+module.exports = { solution };
