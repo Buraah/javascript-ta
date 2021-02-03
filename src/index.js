@@ -1,6 +1,7 @@
 // complete the function
 function palindrom(str) {
   // code goes here
+<<<<<<< HEAD
   var re = /[^A-Za-z0-9]/g;
     str = str.toLowerCase().replace(re, '');
     var len = str.length;
@@ -12,6 +13,9 @@ function palindrom(str) {
     return true;
   }
   palindrome("Taco cat");
+=======
+}
+>>>>>>> 52c421f35aa843b3271f9327805ecb119faa757e
 
 function solution(arg) {
   return palindrom(arg);
